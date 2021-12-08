@@ -80,4 +80,5 @@ jobs:
         draft: true
         prerelease: true
         files: |
-          ${{github.workspace}}*${{matrix.sys.os}}-library.tar.gz
+          ${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz
+          ${{github.workspace}}\${{matrix.sys.os}}-library.tar.gz #Try windows hack
