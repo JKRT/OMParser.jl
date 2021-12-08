@@ -68,8 +68,8 @@ jobs:
 #= Steps to perform the release =#
     - 
       name: "Perform Release"
-      shell: bash #= Use bash to handle issues on Windows =#
-      uses: "marvinpinto/action-automatic-releases@latest" #= Built the latest on master as a prerelease =#
+      uses: "marvinpinto/action-automatic-releases@latest"
+      shell: bash
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "Latest-${{matrix.sys.os}}"
