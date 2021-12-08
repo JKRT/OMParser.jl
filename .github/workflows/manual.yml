@@ -71,7 +71,7 @@ jobs:
       uses: "marvinpinto/action-automatic-releases@latest" #= Built the latest on master as a prerelease =#
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: "Latest ${{matrix.sys.os}}"
+        automatic_release_tag: "Latest-${{matrix.sys.os}}"
         release_name: Release ${ {github.events.input.name} }
         body: |
           Changes in this Release
