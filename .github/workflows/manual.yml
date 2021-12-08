@@ -69,6 +69,8 @@ jobs:
     - 
       name: "Perform Release"
       uses: "marvinpinto/action-automatic-releases@latest" #= Built the latest on master as a prerelease =#
+      outputs:
+        upload_url: ${{ steps.step_upload_url.outputs.upload_url }}
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"
@@ -79,9 +81,6 @@ jobs:
           - qwerty
         draft: true
         prerelease: true
-      outputs:
-        version: ${{ steps.step_version.outputs.version }}
-        upload_url: ${{ steps.step_upload_url.outputs.upload_url }}
     - 
       name: "upload release artifact"
       uses: actions/upload-release-asset@v1
