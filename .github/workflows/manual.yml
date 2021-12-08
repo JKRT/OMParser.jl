@@ -69,7 +69,6 @@ jobs:
     - 
       name: "Perform Release"
       uses: "marvinpinto/action-automatic-releases@latest"
-      shell: bash
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "Latest-${{matrix.sys.os}}"
@@ -81,4 +80,4 @@ jobs:
         draft: true
         prerelease: true
       files: |
-          ${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz
+          ${{github.workspace}}*${{matrix.sys.os}}-library.tar.gz
