@@ -68,6 +68,7 @@ jobs:
 #= Steps to perform the release =#
     - 
       name: "Perform Release"
+      shell: bash #= Use bash to handle issues on Windows =#
       uses: "marvinpinto/action-automatic-releases@latest" #= Built the latest on master as a prerelease =#
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
@@ -79,5 +80,5 @@ jobs:
           - qwerty
         draft: true
         prerelease: true
-        files: |
+      files: |
           ${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz
