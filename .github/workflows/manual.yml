@@ -79,11 +79,13 @@ jobs:
           - qwerty
         draft: true
         prerelease: true
-    - 
-      name: "upload release artifact"
-      uses: actions/upload-release-asset@v1
-      with: 
-        asset_content_type: zip
-        asset_name: "${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz"
-        asset_path: "${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz"
-        upload_url: "${{ steps.Perform Release.outputs.upload_url }}"
+        files: |
+          *-library.tar.gz
+    # - 
+    #   name: "upload release artifact"
+    #   uses: actions/upload-release-asset@v1
+    #   with: 
+    #     asset_content_type: zip
+    #     asset_name: "${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz"
+    #     asset_path: "${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz"
+    #     upload_url: "${{ steps.create_release.outputs.upload_url }}"
