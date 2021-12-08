@@ -69,8 +69,6 @@ jobs:
     - 
       name: "Perform Release"
       uses: "marvinpinto/action-automatic-releases@latest" #= Built the latest on master as a prerelease =#
-      outputs:
-        upload_url: ${{ steps.step_upload_url.outputs.upload_url }}
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"
@@ -88,4 +86,4 @@ jobs:
         asset_content_type: zip
         asset_name: "${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz"
         asset_path: "${{github.workspace}}/${{matrix.sys.os}}-library.tar.gz"
-        upload_url: "${{ steps.create_release.outputs.upload_url }}"
+        upload_url: "${{ steps.Perform Release.outputs.upload_url }}"
