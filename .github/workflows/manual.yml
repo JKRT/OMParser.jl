@@ -79,5 +79,5 @@ jobs:
           - qwerty
         draft: true
         prerelease: true
-      files: |
+        files: |
           ${{github.workspace}}*${{matrix.sys.os}}-library.tar.gz
